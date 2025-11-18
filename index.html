@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Hunter | Esports Legend</title>
+    <link rel="icon" href="zombie.jpg"> <!-- Optional: add your image later -->
+    <style>
+        /* Just a fallback style in case JS is slow */
+        body {
+            background: #000;
+            color: #0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- This page starts completely empty — JavaScript builds everything! -->
+
+    <script>
+        // PURE JAVASCRIPT PORTFOLIO - 100% JS ONLY (No HTML written by you)
+
+        document.body.style.margin = "0";
+        document.body.style.padding = "0";
+        document.body.style.fontFamily = "'Courier New', monospace";
+        document.body.style.background = "#000";
+        document.body.style.color = "#0f0";
+        document.body.style.textAlign = "center";
+        document.body.style.overflowX = "hidden";
+
+        // Header
+        const header = document.createElement("header");
+        header.style.padding = "3rem";
+        header.style.background = "linear-gradient(135deg, #001a00, #000)";
+        header.style.borderBottom = "5px solid #0f0";
+
+        const h1 = document.createElement("h1");
+        h1.textContent = "ZOMBIE HUNTER";
+        h1.style.fontSize = "5rem";
+        h1.style.margin = "0";
+        h1.style.textShadow = "0 0 30px #0f0, 0 0 60px #0f0";
+        h1.style.animation = "glow 2s infinite alternate";
+
+        const sub = document.createElement("p");
+        sub.textContent = "Esports • Tournaments • Gaming God";
+        sub.style.fontSize = "2rem";
+        sub.style.color = "#0ff";
+
+        header.appendChild(h1);
+        header.appendChild(sub);
+        document.body.appendChild(header);
+
+        // Navigation
+        const nav = document.createElement("nav");
+        nav.style.background = "#111";
+        nav.style.padding = "1.5rem";
+        nav.style.position = "sticky";
+        nav.style.top = "0";
+        nav.style.zIndex = "999";
+        nav.style.boxShadow = "0 0 20px #0f0";
+
+        ["Home", "About", "Tournaments", "Contact"].forEach(item => {
+            const a = document.createElement("a");
+            a.textContent = item;
+            a.href = "#" + item.toLowerCase();
+            a.style.color = "#0f0";
+            a.style.margin = "0 2rem";
+            a.style.textDecoration = "none";
+            a.style.fontSize = "1.4rem";
+            a.style.fontWeight = "bold";
+            a.onmouseover = () => a.style.color = "#0ff";
+            a.onmouseout = () => a.style.color = "#0f0";
+            a.onclick = (e) => {
+                e.preventDefault();
+                document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
+            };
+            nav.appendChild(a);
+        });
+        document.body.appendChild(nav);
+
+        // Main Container
+        const container = document.createElement("div");
+        container.style.maxWidth = "1200px";
+        container.style.margin = "0 auto";
+        container.style.padding = "2rem";
+
+        // Helper to create sections
+        function addSection(id, title, content) {
+            const sec = document.createElement("section");
+            sec.id = id;
+            sec.style.margin = "6rem 0";
+            sec.style.padding = "4rem";
+            sec.style.background = "rgba(0,255,0,0.05)";
+            sec.style.border = "3px solid #0f0";
+            sec.style.borderRadius = "20px";
+            sec.style.boxShadow = "0 0 40px rgba(0,255,0,0.4)";
+
+            const h2 = document.createElement("h2");
+            h2.textContent = title;
+            h2.style.fontSize = "3rem";
+            h2.style.color = "#0ff";
+            h2.style.marginBottom = "2rem";
+            h2.style.textShadow = "0 0 20px #0ff";
+
+            sec.appendChild(h2);
+            sec.innerHTML += content;
+            container.appendChild(sec);
+        }
+
+        // Home
+        addSection("home", "WELCOME TO THE ARENA", `
+            <p style="font-size:2rem; color:#0ff;">"Level up your game with the ultimate eSports experience"</p>
+            <p style="font-size:2.5rem; margin:2rem;"><strong>Where gamers unite, compete, and conquer!</strong></p>
+            <iframe width="90%" height="450" src="https://www.youtube.com/embed/pLa--goOyuo?si=8XqDJyl479U6yQGB" 
+                style="border:4px solid #0f0; border-radius:20px; margin:2rem 0;" frameborder="0" allowfullscreen></iframe>
+            <p style="font-size:2rem; color:#0f0; font-weight:bold;">SUBSCRIBE FOR FREE GIFTS!</p>
+        `);
+
+        // About
+        addSection("about", "ABOUT ZOMBIE HUNTER", `
+            <div style="background:rgba(0,255,0,0.1); padding:3rem; border-radius:20px; border:2px solid #0f0;">
+                <p style="font-size:1.8rem;">Founder of <strong>Zombie Hunter Esports</strong></p>
+                <p>Professional Gamer • Tournament Host • Content Creator</p>
+                <p>Hosting India's biggest Valorant, Fortnite & Marvel Rivals tournaments</p>
+                <p style="font-size:2.2rem; color:#0ff; margin:2rem 0;">
+                    "Join the arena. Compete with the best. Rise to the top."
+                </p>
+            </div>
+        `);
+
+        // Tournaments
+        addSection("tournaments", "UPCOMING TOURNAMENTS 2025", `
+            <table style="width:100%; border-collapse:collapse; margin:2rem 0; background:#111;">
+                <tr style="background:#0f0; color:black;"><th style="padding:1.5rem;">Game</th><th>Format</th><th>Date</th></tr>
+                <tr style="border:2px solid #0f0;"><td style="padding:1.5rem; color:#0ff;">Valorant</td><td>5v5</td><td>July 10, 2025</td></tr>
+                <tr style="border:2px solid #0f0;"><td style="padding:1.5rem; color:#0ff;">Fortnite</td><td>Solo/Duo</td><td>July 12, 2025</td></tr>
+                <tr style="border:2px solid #0f0;"><td style="padding:1.5rem; color:#0ff;">Marvel Rivals</td><td>6v6</td><td>July 14, 2025</td></tr>
+            </table>
+        `);
+
+        // Contact
+        addSection("contact", "JOIN THE ZOMBIE ARMY", `
+            <div style="margin:3rem 0;">
+                <a href="https://www.instagram.com/__zombie__hunter__/" target="_blank" 
+                   style="display:inline-block; background:#0f0; color:black; padding:1.5rem 3rem; margin:1rem; 
+                          text-decoration:none; border-radius:50px; font-size:1.5rem; font-weight:bold;">
+                   Instagram
+                </a>
+                <a href="https://www.youtube.com/@zombiehunter1787" target="_blank" 
+                   style="display:inline-block; background:#0f0; color:black; padding:1.5rem 3rem; margin:1rem; 
+                          text-decoration:none; border-radius:50px; font-size:1.5rem; font-weight:bold;">
+                   YouTube
+                </a>
+            </div>
+            <p style="font-size:1.8rem; color:#0ff;">DM for collabs & team tryouts!</p>
+        `);
+
+        // Footer
+        const footer = document.createElement("footer");
+        footer.style.background = "#000";
+        footer.style.padding = "3rem";
+        footer.style.color = "#0f0";
+        footer.style.borderTop = "3px solid #0f0";
+        footer.innerHTML = "<p>© 2025 Zombie Hunter Esports • Built with Pure JavaScript</p>";
+
+        // Add glow animation
+        const style = document.createElement("style");
+        style.textContent = `
+            @keyframes glow {
+                from { text-shadow: 0 0 20px #0f0; }
+                to { text-shadow: 0 0 50px #0f0, 0 0 80px #0f0; }
+            }
+            a:hover { transform: scale(1.1); }
+        `;
+        document.head.appendChild(style);
+
+        document.body.appendChild(container);
+        document.body.appendChild(footer);
+
+        console.log("Zombie Hunter Portfolio loaded with PURE JS!");
+    </script>
+</body>
+</html>
